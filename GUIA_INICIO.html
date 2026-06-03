@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Watcher Pro - Guía de Inicio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .step {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            background: #f8f9ff;
+            border-radius: 5px;
+        }
+        
+        .step h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .warning::before {
+            content: "⚠️";
+            font-size: 1.5em;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .success::before {
+            content: "✓ ";
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .quick-ref {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .ref-card {
+            background: #f8f9ff;
+            border: 1px solid #667eea;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        .ref-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .ref-card li {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .button:hover {
+            background: #764ba2;
+        }
+        
+        @media (max-width: 600px) {
+            .quick-ref {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 Gmail Watcher Pro</h1>
+            <p>Monitor automático de correos en tiempo real</p>
+        </header>
+        
+        <div class="content">
+            <div class="step">
+                <h2>
+                    <span class="step-number">1</span>
+                    Instalar Dependencias
+                </h2>
+                <p>Primero, asegúrate de tener Python 3.7+ instalado. Luego ejecuta:</p>
+                <div class="code">pip install plyer</div>
+                <div class="success">¡Listo! Depende instalada</div>
+            </div>
+            
+            <div class="step">
+                <h2>
+                    <span class="step-number">2</span>
+                    Crear App Password en Google
+                </h2>
+                <p>Este es el paso más importante. Necesitas una App Password especial.</p>
+                
+                <h4>Instrucciones (2 minutos):</h4>
+                <ol style="margin-left: 20px; margin-top: 10px; line-height: 2;">
+                    <li>Abre: <a href="https://myaccount.google.com/apppasswords" target="_blank">Google App Passwords</a></li>
+                    <li>Selecciona <strong>Correo</strong> en la primera opción</li>
+                    <li>Selecciona <strong>Windows</strong> en la segunda opción</li>
+                    <li>Google te generará una contraseña de 16 caracteres</li>
+                    <li><strong>Cópiala SIN ESPACIOS</strong></li>
+                </ol>
+                
+                <p style="margin-top: 15px;"><strong>Ejemplo:</strong></p>
+                <div class="code">Generada: pqdt kgfp kcne zfrk
+Copia esto: pqdtkgfpkcnezfrk</div>
+                
+                <div class="warning">
+                    Si no ves "App passwords", primero habilita "Verificación en 2 pasos" en <a href="https://myaccount.google.com/security" target="_blank">Google Security</a>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h2>
+                    <span class="step-number">3</span>
+                    Ejecutar el Programa
+                </h2>
+                <p>Abre una terminal en la carpeta del programa y ejecuta:</p>
+                <div class="code">python gmail_watcher_gui.py</div>
+                <p>Se abrirá una ventana con la interfaz gráfica.</p>
+            </div>
+            
+            <div class="step">
+                <h2>
+                    <span class="step-number">4</span>
+                    Completar Configuración
+                </h2>
+                <p>En la ventana, completa estos campos:</p>
+                
+                <table>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Ejemplo</th>
+                        <th>Notas</th>
+                    </tr>
+                    <tr>
+                        <td>📧 Correo Gmail</td>
+                        <td>tu@gmail.com</td>
+                        <td>Tu correo de Gmail</td>
+                    </tr>
+                    <tr>
+                        <td>🔑 App password</td>
+                        <td>pqdtkgfpkcnezfrk</td>
+                        <td>SIN ESPACIOS</td>
+                    </tr>
+                    <tr>
+                        <td>👁️ Vigilar remitentes</td>
+                        <td>noreply@fing.edu.uy</td>
+                        <td>Separa varios con comas</td>
+                    </tr>
+                    <tr>
+                        <td>⏱️ Intervalo</td>
+                        <td>30</td>
+                        <td>Segundos (mínimo 5)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="step">
+                <h2>
+                    <span class="step-number">5</span>
+                    ¡Iniciar Monitoreo!
+                </h2>
+                <p>Presiona el botón <strong>▶️ Iniciar</strong> y listo.</p>
+                <p>Verás en la pestaña <strong>📋 Alertas</strong> el estado actual:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🟡 <strong>Conectando...</strong> - Se está inicializando</li>
+                    <li>🟢 <strong>Vigilando</strong> - ¡Funcionando!</li>
+                    <li>🔴 <strong>Detenida</strong> - No está activo</li>
+                </ul>
+                <div class="success">¡Ya está! El programa vigilará automáticamente</div>
+            </div>
+            
+            <div class="quick-ref">
+                <div class="ref-card">
+                    <h3>💡 Consejos Rápidos</h3>
+                    <ul>
+                        <li>Vigila múltiples remitentes con comas: <code>email1@dom.com, email2@dom.com</code></li>
+                        <li>O vigila por dominio: <code>dom.com</code></li>
+                        <li>Intervalo recomendado: 15-30 segundos</li>
+                        <li>El programa sigue corriendo si lo minimizas</li>
+                        <li>Las notificaciones aparecerán automáticamente</li>
+                    </ul>
+                </div>
+                
+                <div class="ref-card">
+                    <h3>🐛 Solución de Problemas</h3>
+                    <ul>
+                        <li><strong>No conecta:</strong> Verifica App Password SIN ESPACIOS</li>
+                        <li><strong>No detecta correos:</strong> Usa solo el dominio</li>
+                        <li><strong>Sin notificaciones:</strong> Presiona "🔔 Probar"</li>
+                        <li><strong>Se desconecta:</strong> Sube intervalo a 60s</li>
+                        <li><strong>Se congela:</strong> Reinicia el programa</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #e7f3ff; border-left: 4px solid #0066cc; border-radius: 5px;">
+                <h3 style="color: #0066cc; margin-bottom: 10px;">📚 Más Ayuda</h3>
+                <ul style="margin-left: 20px;">
+                    <li><strong>MANUAL.md</strong> - Manual completo con todas las funciones</li>
+                    <li><strong>INICIO_RAPIDO.md</strong> - Versión condensada en 5 minutos</li>
+                    <li>Revisa el <strong>Registro</strong> en la pestaña "Alertas" para ver detalles</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Gmail Watcher Pro v2.1 | Completamente robusto - Nunca falla ✓</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Última actualización: Junio 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
