@@ -1,0 +1,17 @@
+build/app_corregida/Analysis-00.toc
+build/app_corregida/app_corregida.pkg
+dist/gmail_watcher_config.json
+dist/app_corregida.exe
+build/app_corregida/localpycs/struct.pyc
+build/app_corregida/localpycs/pyimod04_pywin32.pyc
+build/app_corregida/localpycs/pyimod03_ctypes.pyc
+build/app_corregida/localpycs/pyimod02_importers.pyc
+build/app_corregida/localpycs/pyimod01_archive.pyc
+build/app_corregida/xref-app_corregida.html
+build/app_corregida/warn-app_corregida.txt
+build/app_corregida/PYZ-00.toc
+build/app_corregida/PYZ-00.pyz
+build/app_corregida/PKG-00.toc
+build/app_corregida/EXE-00.toc
+build/app_corregida/base_library.zip
+script.js

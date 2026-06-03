@@ -1,0 +1,3 @@
+imaplib
+email
+plyer>=2.1.0
